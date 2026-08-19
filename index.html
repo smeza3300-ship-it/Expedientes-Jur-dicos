@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedientes Jurídicos</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="logo">
+            <span class="simbolo">⚖</span>
+            <div>
+                <h1>EXPEDIENTES JURÍDICOS</h1>
+                <p>Sistema de gestión y organización jurídica</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#expedientes">Expedientes</a>
+            <a href="#nuevo">Nuevo expediente</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- INICIO -->
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-text">
+
+                <span class="etiqueta">SISTEMA JURÍDICO</span>
+
+                <h2>
+                    Organización jurídica
+                    <span>en un solo lugar.</span>
+                </h2>
+
+                <p>
+                    Registra, consulta y organiza tus expedientes jurídicos
+                    de manera sencilla, rápida y ordenada.
+                </p>
+
+                <a href="#nuevo" class="boton-principal">
+                    + Nuevo expediente
+                </a>
+
+            </div>
+
+            <div class="tarjeta-hero">
+
+                <div class="icono-balanza">⚖</div>
+
+                <h3>Gestión de expedientes</h3>
+
+                <p>
+                    Mantén tu información jurídica organizada
+                    y disponible cuando la necesites.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="estadisticas">
+
+            <div class="estadistica">
+                <span>📁</span>
+                <strong id="totalExpedientes">0</strong>
+                <p>Expedientes</p>
+            </div>
+
+            <div class="estadistica">
+                <span>⚖</span>
+                <strong id="expedientesActivos">0</strong>
+                <p>Activos</p>
+            </div>
+
+            <div class="estadistica">
+                <span>✓</span>
+                <strong id="expedientesConcluidos">0</strong>
+                <p>Concluidos</p>
+            </div>
+
+        </section>
+
+
+        <!-- EXPEDIENTES -->
+
+        <section id="expedientes" class="seccion">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <span class="etiqueta">ARCHIVO JURÍDICO</span>
+                    <h2>Mis expedientes</h2>
+                </div>
+
+                <button class="boton-secundario" onclick="mostrarFormulario()">
+                    + Añadir expediente
+                </button>
+
+            </div>
+
+
+            <div class="buscador">
+
+                <input
+                    type="text"
+                    id="busqueda"
+                    placeholder="Buscar por nombre, número o asunto..."
+                    onkeyup="buscarExpedientes()"
+                >
+
+                <select id="filtro" onchange="buscarExpedientes()">
+
+                    <option value="todos">Todos</option>
+                    <option value="activo">Activos</option>
+                    <option value="concluido">Concluidos</option>
+
+                </select>
+
+            </div>
+
+
+            <div id="listaExpedientes" class="lista-expedientes">
+
+                <div class="vacio">
+
+                    <div class="vacio-icono">📂</div>
+
+                    <h3>No hay expedientes registrados</h3>
+
+                    <p>
+                        Comienza agregando tu primer expediente jurídico.
+                    </p>
+
+                    <button class="boton-principal" onclick="mostrarFormulario()">
+                        Crear expediente
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NUEVO EXPEDIENTE -->
+
+        <section id="nuevo" class="seccion formulario-seccion">
+
+            <div class="titulo-seccion">
+
+                <div>
+                    <span class="etiqueta">REGISTRO</span>
+                    <h2>Nuevo expediente</h2>
+                </div>
+
+            </div>
+
+
+            <form id="formularioExpediente">
+
+                <div class="grupo">
+
+                    <label for="nombre">
+                        Nombre del expediente
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej. Caso García López"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="fila">
+
+                    <div class="grupo">
+
+                        <label for="numero">
+                            Número de expediente
+                        </label>
+
+                        <input
+                            type="text"
+                            id="numero"
+                            placeholder="Ej. EXP-2026-001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="grupo">
+
+                        <label for="tipo">
+                            Tipo de asunto
+                        </label>
+
+                        <select id="tipo">
+
+                            <option value="Civil">Civil</option>
+                            <option value="Penal">Penal</option>
+                            <option value="Familiar">Familiar</option>
+                            <option value="Laboral">Laboral</option>
+                            <option value="Mercantil">Mercantil</option>
+                            <option value="Administrativo">Administrativo</option>
+                            <option value="Constitucional">Constitucional</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fila">
+
+                    <div class="grupo">
+
+                        <label for="cliente">
+                            Nombre del interesado
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cliente"
+                            placeholder="Nombre completo"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="grupo">
+
+                        <label for="estado">
+                            Estado del expediente
+                        </label>
+
+                        <select id="estado">
+
+                            <option value="activo">Activo</option>
+                            <option value="concluido">Concluido</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grupo">
+
+                    <label for="descripcion">
+                        Descripción del asunto
+                    </label>
+
+                    <textarea
+                        id="descripcion"
+                        rows="5"
+                        placeholder="Describe brevemente el asunto jurídico..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="acciones-formulario">
+
+                    <button
+                        type="button"
+                        class="boton-cancelar"
+                        onclick="limpiarFormulario()"
+                    >
+                        Limpiar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="boton-principal"
+                    >
+                        Guardar expediente
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            ⚖ EXPEDIENTES JURÍDICOS
+        </div>
+
+        <p>
+            Sistema de gestión y organización de información jurídica.
+        </p>
+
+        <span>
+            © 2026 Expedientes Jurídicos
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
