@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+    background: #090909;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.simbolo {
+    color: #d4af37;
+    font-size: 35px;
+}
+
+.logo h1 {
+    color: #d4af37;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.logo p {
+    color: #858585;
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(212,175,55,0.12),
+            transparent 35%
+        ),
+        #080808;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.etiqueta {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h2 {
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+.hero h2 span {
+    color: #d4af37;
+    display: block;
+}
+
+.hero p {
+    color: #aaa;
+    max-width: 600px;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.boton-principal {
+    display: inline-block;
+    padding: 14px 25px;
+    border: none;
+    background: #d4af37;
+    color: #080808;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.boton-principal:hover {
+    background: #f1d36a;
+    transform: translateY(-2px);
+}
+
+.tarjeta-hero {
+    width: 330px;
+    min-height: 330px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #3b3b3b;
+    background: linear-gradient(
+        145deg,
+        #151515,
+        #0b0b0b
+    );
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.icono-balanza {
+    font-size: 70px;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.tarjeta-hero h3 {
+    color: #d4af37;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-hero p {
+    color: #999;
+    font-size: 14px;
+}
+
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.estadisticas {
+    padding: 35px 7%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    background: #0d0d0d;
+}
+
+.estadistica {
+    text-align: center;
+    padding: 20px;
+}
+
+.estadistica span {
+    display: block;
+    color: #d4af37;
+    font-size: 25px;
+}
+
+.estadistica strong {
+    display: block;
+    font-size: 32px;
+    margin-top: 5px;
+}
+
+.estadistica p {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    padding: 100px 7%;
+}
+
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2 {
+    font-size: 40px;
+    margin-top: 8px;
+}
+
+.boton-secundario {
+    padding: 12px 20px;
+    border: 1px solid #d4af37;
+    background: transparent;
+    color: #d4af37;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.boton-secundario:hover {
+    background: #d4af37;
+    color: #080808;
+}
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.buscador {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.buscador input,
+.buscador select {
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    padding: 15px;
+    outline: none;
+}
+
+.buscador input {
+    flex: 1;
+}
+
+.buscador input:focus,
+.buscador select:focus {
+    border-color: #d4af37;
+}
+
+
+/* =========================
+   EXPEDIENTES
+========================= */
+
+.lista-expedientes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.expediente {
+    padding: 25px;
+    background: #111;
+    border: 1px solid #292929;
+    border-left: 3px solid #d4af37;
+    transition: 0.3s;
+}
+
+.expediente:hover {
+    transform: translateY(-4px);
+    border-color: #d4af37;
+}
+
+.expediente-numero {
+    color: #d4af37;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.expediente h3 {
+    margin: 10px 0;
+}
+
+.expediente p {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.estado {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    border: 1px solid #555;
+}
+
+.estado.activo {
+    color: #d4af37;
+    border-color: #d4af37;
+}
+
+.estado.concluido {
+    color: #aaa;
+}
+
+
+/* =========================
+   ESTADO VACÍO
+========================= */
+
+.vacio {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 70px 20px;
+    border: 1px dashed #333;
+}
+
+.vacio-icono {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.vacio h3 {
+    margin-bottom: 8px;
+}
+
+.vacio p {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.formulario-seccion {
+    background: #0d0d0d;
+}
+
+#formularioExpediente {
+    max-width: 900px;
+    margin: auto;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.grupo label {
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.grupo input,
+.grupo select,
+.grupo textarea {
+    padding: 14px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    outline: none;
+    font-family: inherit;
+}
+
+.grupo input:focus,
+.grupo select:focus,
+.grupo textarea:focus {
+    border-color: #d4af37;
+}
+
+.grupo textarea {
+    resize: vertical;
+}
+
+.acciones-formulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.boton-cancelar {
+    padding: 14px 25px;
+    background: transparent;
+    border: 1px solid #555;
+    color: #aaa;
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 7%;
+    text-align: center;
+    border-top: 1px solid #292929;
+    background: #050505;
+}
+
+.footer-logo {
+    color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+footer span {
+    color: #444;
+    font-size: 11px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .encabezado {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-hero {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-seccion {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .fila {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .buscador {
+        flex-direction: column;
+    }
+}
